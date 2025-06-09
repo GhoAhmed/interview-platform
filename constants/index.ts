@@ -201,6 +201,7 @@ export const interviewCovers = [
   "/telegram.png",
   "/tiktok.png",
   "/yahoo.png",
+  "/coding.png",
 ];
 
 export const dummyInterviews: Interview[] = [
