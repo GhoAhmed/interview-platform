@@ -27,7 +27,8 @@ export async function setSessionCookie(idToken: string) {
 
 export async function signUp(params: SignUpParams) {
   const { uid, name, email } = params;
-
+  // Path to your default avatar
+  const DEFAULT_AVATAR = "/user-avatar.png";
   try {
     // check if user exists in db
     const userRecord = await db.collection("users").doc(uid).get();
@@ -41,8 +42,7 @@ export async function signUp(params: SignUpParams) {
     await db.collection("users").doc(uid).set({
       name,
       email,
-      // profileURL,
-      // resumeURL,
+      profileImage: DEFAULT_AVATAR,
     });
 
     return {
